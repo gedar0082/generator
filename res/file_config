@@ -1,0 +1,4 @@
+*This is navigation file in other config files.
+*Constant matches filename.
+
+db_properties = db_properties
