@@ -1,25 +1,33 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
+import java.sql.*;
 
 
 public class Main {
 
-    private final String url = "jdbc:postgresql://localhost:5432/taudio";
-    private String user = "postgres";
-    private String passsword = "9204";
+    final String user = "postgres";
+    final String password = "9204";
+    final String url = "jdbc:postgresql://localhost:5432/taudio";
 
-    public static void main(String[] args) throws ClassNotFoundException {
-        Class.forName("org.postgresql.Driver");
+    public static void main(String[] args){
+        try{
+            Class.forName("org.postgresql.Driver");
+        }catch(ClassNotFoundException e){
+            System.out.println("Cant find driver");
+            e.printStackTrace();
+        }
         Main main = new Main();
-        main.connect();
+        try{
+            Statement statement = main.connect().createStatement();
+            //statement.execute("INSERT INTO client(id, first_name, last_name, telephone) values (1, 'Ivan', 'Trushin', 88005553535);");
+            ResultSet res = statement.executeQuery("select * from client;");
+        }catch (SQLException e){ e.printStackTrace(); }
+
+
     }
 
     public Connection connect(){
         Connection connection = null;
         try{
-            connection = DriverManager.getConnection(url, user, passsword);
+            connection = DriverManager.getConnection(url, user, password);
             System.out.println("SUCCESSFULLY CONNECTED");
         } catch (SQLException e){
             System.out.println("FAILED CONNECTION");
@@ -27,6 +35,8 @@ public class Main {
         }
         return connection;
     }
+
+
 
 
 }
