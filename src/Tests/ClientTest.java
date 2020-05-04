@@ -1,13 +1,11 @@
 package Tests;
 
 import Tables.Client;
-import Tables.Table;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class ClientTest {
     Client client = new Client();
-    Table t = new Table();
 
     @Test
     void getFirstName() {

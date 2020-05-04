@@ -8,12 +8,6 @@ public class Client extends Table {
     final String last_name = "res\\last_names";
     String[] first_names;
     String[] last_names;
-    int index = 0;
-
-    public int getIndex(){
-        index++;
-        return index - 1;
-    }
 
     public String getFirstName(){
 

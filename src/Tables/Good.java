@@ -4,11 +4,6 @@ public class Good extends Table {
     final String goods = "res\\goods";
     String[] companies;
 
-
-    public String getQuantity(){
-        return String.valueOf(rnd(1,4));
-    }
-
     public String getPrice(){
         return rnd(10, 1000) + "." + rnd(1, 9);
     }

@@ -7,12 +7,7 @@ public class Worker extends Table {
     String[] first_names;
     String[] last_names;
     String[] jobs;
-    int index = 0;
 
-    public int getIndex(){
-        index++;
-        return index - 1;
-    }
 
     public String getFirstName(){
         if (first_names == null) first_names = fileReader(first_name);
@@ -33,12 +28,11 @@ public class Worker extends Table {
     }
 
     public int getSalary(String job){
-        int salary = 777;
         switch (job){
-            case("seller"): salary = rnd(100, 999);
-            case("manager"): salary = rnd(1000, 9999);
-            case("boss"): salary = rnd(1000, 9999);
+            case("seller"): return rnd(100, 999);
+            case("manager"): return rnd(1000, 4999);
+            case("boss"): return rnd(5000, 9999);
+            default: return 777;
         }
-        return salary;
     }
 }

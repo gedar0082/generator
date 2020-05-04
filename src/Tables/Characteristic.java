@@ -12,10 +12,6 @@ public class Characteristic extends Table{
         return parser(line)[1];
     }
 
-    public int getID(String line){
-        return Integer.parseInt(parser(line)[0]);
-    }
-
     public double getRandomValue(){
         return rndDouble(1, 5);
     }

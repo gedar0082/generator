@@ -8,10 +8,4 @@ public class Status extends Table{
         return statuses;
     }
 
-    public String getStatus(){
-
-        return statuses[rnd(0, statuses.length-1)];
-    }
-
-
 }
