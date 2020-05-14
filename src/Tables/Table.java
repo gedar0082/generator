@@ -15,7 +15,7 @@ public class Table {
 
     }
 
-    String[] fileReader(String filename){
+    public String[] fileReader(String filename){
         ArrayList<String> strs = new ArrayList<>();
         try{
             File file = new File(filename);
@@ -38,4 +38,6 @@ public class Table {
         }
         return null;
     }
+
+    public String[] parserConfig(String line){ return line.split("[ ]+"); }
 }

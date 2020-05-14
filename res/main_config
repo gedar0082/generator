@@ -1,0 +1,4 @@
+user        postgres
+url         jdbc:postgresql://localhost:5432/taudio
+password    9204
+Allow_drop  true
